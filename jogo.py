@@ -24,11 +24,11 @@ def iniciar_jogo():
     """
     jogo = construir_jogo()
     personagem_jogador = jogo.registrarAgentePersonagem(Personagens.JOGADOR_RESTA_UM)
-    escolha = int(input("1- Humano joga || 2- Maquina joga "))
+    escolha = int(input("1- Humano joga || 2- Maquina joga \n"))
     if escolha == 1:
         agente_jogador = construir_agente(TiposAgentes.PREPOSTO_HUMANO, Personagens.JOGADOR_RESTA_UM)
     elif escolha == 2:
-        escolha2 = int(input("1- AUTO_BFS || 2- AUTO_DFS "))
+        escolha2 = int(input("1- AUTO_BFS || 2- AUTO_DFS \n"))
         if escolha2 == 1:
             agente_jogador = construir_agente(TiposAgentes.AUTO_BFS, Personagens.JOGADOR_RESTA_UM)
         elif escolha2 == 2:

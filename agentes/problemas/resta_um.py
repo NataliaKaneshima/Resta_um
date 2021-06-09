@@ -111,6 +111,10 @@ class ProblemaRestaUm:
         return len(estado.tabuleiro) == 1
     
     @staticmethod
+    def avaliacao(estado: EstadoRestaUm) -> int:
+        return len(estado.tabuleiro)
+
+    @staticmethod
     def custo(inicial: EstadoRestaUm, acao: Mover, 
               resultante: EstadoRestaUm) -> int:
         """Custo em quantidade de jogadas"""

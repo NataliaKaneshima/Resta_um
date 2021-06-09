@@ -10,7 +10,7 @@ from .buscadores.busca import busca_arvore_bfs
 from .buscadores.busca import busca_arvore_dfs
 
 
-class AgenteAutomaticoBfs(AgenteAbstrato):
+class AgenteAutomaticoDfs(AgenteAbstrato):
 
     def __init__(self) -> None:
         super().__init__()
@@ -20,7 +20,7 @@ class AgenteAutomaticoBfs(AgenteAbstrato):
 
     def adquirirPercepcao(self, percepcao_mundo: PercepcoesJogador):
         """ Inspeciona a disposicao dos elementos no objeto de visao."""
-        AgenteAutomaticoBfs.desenhar_tabuleiro(percepcao_mundo)
+        AgenteAutomaticoDfs.desenhar_tabuleiro(percepcao_mundo)
 
         if not self.solucao:
             self.problema = ProblemaRestaUm()  # TODO: # percepcao_mundo)
@@ -33,11 +33,11 @@ class AgenteAutomaticoBfs(AgenteAbstrato):
             if not self.solucao:
                 raise Exception("Agente BFS não encontrou solução.")
         
-        acao = self.solucao.pop(0)
+        acao = self.solucao.pop()
         print(f"Próxima ação é {acao}.")
         time.sleep(2)
 
-        x, y, d = AgenteAutomaticoBfs.traduzir_acao_jogo(acao)
+        x, y, d = AgenteAutomaticoDfs.traduzir_acao_jogo(acao)
         return AcaoJogador.mover_bolinha(x, y, d)
     
     @staticmethod

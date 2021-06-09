@@ -1,5 +1,6 @@
 from .humano import AgentePrepostoESHumano
 from .auto_bfs import AgenteAutomaticoBfs
+from .auto_dfs import AgenteAutomaticoDfs
 from .tipos import TiposAgentes
 
 def construir_agente(*args, **kwargs):
@@ -11,5 +12,7 @@ def construir_agente(*args, **kwargs):
         return AgentePrepostoESHumano()
     if tipo_agente == TiposAgentes.AUTO_BFS:
         return AgenteAutomaticoBfs()
-    
+    if tipo_agente == TiposAgentes.AUTO_DFS:
+        return AgenteAutomaticoDfs()
+
     raise ValueError("Não foi escolhido nenhum tipo de agente válido.")
