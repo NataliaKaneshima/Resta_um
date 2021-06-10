@@ -2,7 +2,7 @@ import random
 from itertools import islice
 from typing import Iterable, Optional, List
 
-from agentes.problemas.resta_um import ProblemaRestaUm, EstadoRestaUm
+from problemas.resta_um import ProblemaRestaUm, EstadoRestaUm
 
 def subida_encosta(estado_inicial: EstadoRestaUm) -> EstadoRestaUm:
     melhor_atual = estado_inicial
